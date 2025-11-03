@@ -1,0 +1,118 @@
+6T SRAM Cell – Cadence Virtuoso Implementation (45 nm)
+🔹 Project Title
+
+Design and Simulation of a 6T SRAM Cell using Cadence Virtuoso (45 nm Technology)
+
+🔹 Objective
+
+To design and simulate a 6-Transistor Static Random Access Memory (6T SRAM) Cell using Cadence Virtuoso at the transistor level in 45 nm CMOS technology, and verify its correct functionality through schematic and layout (up to LVS verification).
+
+🔹 Project Description
+
+This project presents the design and analysis of a 6T SRAM cell, one of the fundamental building blocks of static random-access memory.
+The 6T SRAM cell consists of two cross-coupled CMOS inverters that store a single bit of data, and two NMOS access transistors that connect the cell to the bitlines during read and write operations.
+
+The project focuses on:
+
+Circuit-level design in Cadence Virtuoso
+
+Functional simulation using Spectre
+
+Layout design according to 45 nm design rules
+
+DRC and LVS verification
+
+🔹 Working Principle
+🟢 Write Operation
+
+The Word Line (WL) is asserted high.
+
+Data on Bit Line (BL) and Bit Line Bar (BLB) overwrites the previous cell content through the access transistors.
+
+Depending on the input, one storage node is pulled low while the other is pulled high.
+
+🔵 Read Operation
+
+Both bitlines are precharged before the read.
+
+The Word Line is enabled; one bitline discharges slightly depending on the stored data.
+
+Sense amplifiers detect this voltage difference without altering the stored bit.
+
+⚫ Hold Operation
+
+When the Word Line is low, the access transistors are off.
+
+The cross-coupled inverters retain the stored logic level through feedback.
+
+🔹 Design Environment
+Parameter	Description
+Tool	Cadence Virtuoso
+Simulator	Spectre (Analog Design Environment)
+Technology Node	45 nm CMOS
+Supply Voltage (VDD)	1 V
+Analyses Performed	DC, Transient
+Layout Checks	DRC and LVS completed
+Post-Layout	Not performed
+🔹 Design Flow
+
+Schematic Design of 6T SRAM cell using NMOS and PMOS transistors.
+
+Symbol Creation for easy testbench integration.
+
+Testbench Setup for simulating read, write, and hold operations.
+
+Transient Simulation using Spectre in ADE to verify functionality.
+
+Layout Design following 45 nm design rules (λ-based).
+
+DRC (Design Rule Check) performed to ensure rule compliance.
+
+LVS (Layout Versus Schematic) verification to confirm layout matches schematic.
+
+🔹 Results & Observations
+
+The schematic simulation confirms successful read/write/hold operations.
+
+DRC passed, indicating no design rule violations.
+
+LVS matched, confirming layout accuracy.
+
+Proper transistor sizing ensures read stability and data retention.
+
+The design is ready for parasitic extraction and post-layout simulation as the next step.
+
+🔹 Applications
+
+Cache memory in microprocessors
+
+Register files and buffers
+
+Low-power embedded memory blocks
+
+FPGA configuration memory
+
+🔹 Repository Structure
+6T-SRAM-45nm/
+│
+├── schematic/         # Virtuoso schematic and symbol files
+├── testbench/         # Read, write, and hold testbenches
+├── simulation/        # Spectre simulation results and waveforms
+├── layout/            # Layout, DRC, and LVS verification files
+├── results/           # Screenshots (schematic, layout, DRC/LVS reports)
+└── README.md          # Project overview (this file)
+
+🔹 Future Work
+
+Perform post-layout simulation with parasitic extraction (PEX).
+
+Measure Static Noise Margin (SNM) and Power-Delay Product (PDP).
+
+Extend the single cell into a 4×4 SRAM array.
+
+Compare performance with 8T and 10T SRAM designs for stability improvement.
+
+🔹 Contributor
+
+👩‍💻 Pranathi Dasari (Roll No: 123EC0048)
+IIITDM Kurnool
